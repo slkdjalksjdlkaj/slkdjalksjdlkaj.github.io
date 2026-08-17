@@ -23,7 +23,7 @@ const baseSprites = [
     { id: "fire_holofoil", name: "Holofoil Fire", theme: "Holofoil", rarity: "Special", unreleased: false, season: "Runners" },
 	{ id: "fire_rift", name: "Cube Fire", theme: "Cube", rarity: "Special", unreleased: false, season: "Runners" },
 	{ id: "fire_quack", name: "Quack Fire", theme: "Quack", rarity: "Special", unreleased: false, season: "Runners" },
-	{ id: "fire_gem", name: "Gem Fire", theme: "Gem", rarity: "Special", unreleased: true, season: "Unknown" },
+	//{ id: "fire_gem", name: "Gem Fire", theme: "Gem", rarity: "Special", unreleased: true, season: "Unknown" },
 	
     { id: "duck_basic", name: "Duck", theme: "Basic", rarity: "Epic", unreleased: false, season: "Runners" },
     { id: "duck_gold", name: "Gold Duck", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
@@ -36,14 +36,14 @@ const baseSprites = [
     { id: "ghost_candy", name: "Gummy Ghost", theme: "Candy", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "ghost_galaxy", name: "Galaxy Ghost", theme: "Galaxy", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "ghost_holofoil", name: "Holofoil Ghost", theme: "Holofoil", rarity: "Special", unreleased: false, season: "Runners" },
-	{ id: "ghost_gem", name: "Gem Ghost", theme: "Gem", rarity: "Special", unreleased: true, season: "Unknown" },
+	// id: "ghost_gem", name: "Gem Ghost", theme: "Gem", rarity: "Special", unreleased: true, season: "Unknown" },
 	
     { id: "dream_basic", name: "Dream", theme: "Basic", rarity: "Legendary", unreleased: false, season: "Runners" },
     { id: "dream_gold", name: "Gold Dream", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "dream_candy", name: "Gummy Dream", theme: "Candy", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "dream_galaxy", name: "Galaxy Dream", theme: "Galaxy", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "dream_rift", name: "Cube Dream", theme: "Cube", rarity: "Special", unreleased: false, season: "Runners" },
-	{ id: "dream_gem", name: "Gem Dream", theme: "Gem", rarity: "Special", unreleased: true, season: "Unknown" },
+	//{ id: "dream_gem", name: "Gem Dream", theme: "Gem", rarity: "Special", unreleased: true, season: "Unknown" },
 	
     { id: "demon_basic", name: "Demon", theme: "Basic", rarity: "Epic", unreleased: false, season: "Runners" },
     { id: "demon_gold", name: "Gold Demon", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
@@ -101,7 +101,7 @@ const baseSprites = [
     { id: "boss_gold", name: "Gold Boss", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "boss_candy", name: "Gummy Boss", theme: "Candy", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "boss_galaxy", name: "Galaxy Boss", theme: "Galaxy", rarity: "Special", unreleased: false, season: "Runners" },
-	{ id: "boss_gem", name: "Gem Boss", theme: "Gem", rarity: "Special", unreleased: true, season: "Unknown" },
+	// { id: "boss_gem", name: "Gem Boss", theme: "Gem", rarity: "Special", unreleased: true, season: "Unknown" },
 	//	{ id: "boss_holofoil", name: "Holofoil Boss", theme: "Holofoil", rarity: "Special", unreleased: false, season: "Unknown" },
 	{ id: "boss_rift", name: "Cube Boss", theme: "Cube", rarity: "Special", unreleased: false, season: "Runners" },
 
