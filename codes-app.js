@@ -73,9 +73,15 @@ function renderCodes() {
         const row = document.createElement('div');
         row.className = `code-row ${isRedeemed ? 'redeemed' : ''}`;
 
+        // Format Source link or plain text
+        const sourceHtml = item.link && item.link.trim() !== ''
+            ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer" class="code-source-link">${item.source || ''}</a>`
+            : `<span class="code-source">${item.source || ''}</span>`;
+
         row.innerHTML = `
             <span class="code-value" title="Click to copy">${item.code}</span>
             <span class="code-reward">${item.reward}</span>
+            <div class="code-source-cell">${sourceHtml}</div>
             <div class="code-card-actions">
                 <button type="button" class="btn btn-copy">Copy Code</button>
                 <button type="button" class="btn btn-redeem ${isRedeemed ? '' : 'btn-accent'}">
