@@ -1046,3 +1046,37 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     color: #ffffff;
     margin-top: 2px;
 }
+
+/* ===================================================
+   Floating Copy Animation
+   =================================================== */
+
+.floating-copy-text {
+    position: fixed;
+    transform: translate(-50%, -100%);
+    color: #22c55e;
+    font-family: 'Oswald', system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(34, 197, 94, 0.4);
+    pointer-events: none;
+    z-index: 9999;
+    white-space: nowrap;
+    animation: floatAndFade 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes floatAndFade {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -8px) scale(0.9);
+    }
+    15% {
+        opacity: 1;
+        transform: translate(-50%, -16px) scale(1.05);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% + var(--target-x, 0px)), var(--target-y, -50px)) scale(0.95);
+    }
+}
