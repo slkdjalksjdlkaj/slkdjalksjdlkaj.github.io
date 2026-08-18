@@ -1,6 +1,6 @@
 // Data sheet where I catalogue current lobby codes.
 const baseCodes = [
-    { code: "BORN2PLAY", reward: "Unknown", source: "Nintendo", link: "https://x.com/NintendoAmerica/status/2089396842798669841", active: true },
+    { code: "BORN2PLAY", reward: "Unknown", source: "Nintendo of America", link: "https://x.com/NintendoAmerica/status/2089396842798669841", active: true },
     { code: "8BitBlast", reward: "Unknown", source: "Unknown", link: "", active: true },
     { code: "maligilume", reward: "Unknown", source: "Unknown", link: "", active: true },
     { code: "bemorealien", reward: "Unknown", source: "Unknown", link: "", active: true },
