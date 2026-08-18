@@ -1591,11 +1591,73 @@ function bindEvents() {
 
 
 
+// Floating copy notification & clipboard helper
+function showFloatingCopyText(anchorElement) {
+    const textEl = document.createElement('div');
+    textEl.className = 'floating-copy-text';
+    textEl.textContent = 'Code copied to clipboard!';
+
+    // Get position of anchor element
+    const rect = anchorElement.getBoundingClientRect();
+    const startX = rect.left + rect.width / 2;
+    const startY = rect.top;
+
+    // Random horizontal angle (-25px to +25px offset)
+    const randomAngleX = (Math.random() - 0.5) * 50;
+    const endY = -40 - Math.random() * 20; // Float up 40px to 60px
+
+    textEl.style.setProperty('--target-x', `${randomAngleX}px`);
+    textEl.style.setProperty('--target-y', `${endY}px`);
+    textEl.style.left = `${startX}px`;
+    textEl.style.top = `${startY}px`;
+
+    document.body.appendChild(textEl);
+
+    // Remove element when animation completes
+    textEl.addEventListener('animationend', () => {
+        textEl.remove();
+    });
+}
+
+function copySupportCode(buttonEl) {
+    const code = buttonEl.textContent.trim();
+    
+    // Attempt clipboard write
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(code).then(() => {
+            showFloatingCopyText(buttonEl);
+        }).catch(() => {
+            fallbackCopy(code, buttonEl);
+        });
+    } else {
+        fallbackCopy(code, buttonEl);
+    }
+}
+
+function fallbackCopy(text, buttonEl) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.opacity = '0';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+        document.execCommand('copy');
+        showFloatingCopyText(buttonEl);
+    } catch (err) {
+        console.error('Failed to copy: ', err);
+    }
+    document.body.removeChild(textArea);
+}
+
+// Attach listener when DOM content loads
 document.addEventListener('DOMContentLoaded', () => {
-    const supportCodeBtn = document.getElementById('supportCodeBtn');
-    if (supportCodeBtn) {
-        supportCodeBtn.addEventListener('click', () => {
-            copyToClipboard('BATTER', supportCodeBtn);
+    const supportBtn = document.getElementById('supportCodeBtn');
+    if (supportBtn) {
+        supportBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            copySupportCode(supportBtn);
         });
     }
 });
