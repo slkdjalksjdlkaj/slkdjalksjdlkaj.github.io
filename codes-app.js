@@ -82,7 +82,6 @@ function renderCodes() {
             <span class="code-value" title="Click to copy">${item.code}</span>
             <span class="code-reward">${item.reward}</span>
             <div class="code-source-cell">${sourceHtml}</div>
-            <span class="code-date-cell">${getRelativeTimeString(item.date)}</span>
             <div class="code-card-actions">
                 <button type="button" class="btn btn-copy">Copy Code</button>
                 <button type="button" class="btn btn-redeem ${isRedeemed ? '' : 'btn-accent'}">
@@ -136,28 +135,6 @@ function initToolbar() {
             renderCodes();
         });
     }
-}
-
-// Helper to compute relative time string
-function getRelativeTimeString(dateString) {
-    if (!dateString) return '';
-    const date = new Date(dateString);
-    if (isNaN(date.getTime())) return '';
-
-    const now = new Date();
-    const diffInSeconds = Math.floor((now - date) / 1000);
-
-    if (diffInSeconds < 60) return 'Just now';
-    const minutes = Math.floor(diffInSeconds / 60);
-    if (minutes < 60) return `${minutes}m ago`;
-    const hours = Math.floor(diffInSeconds / 3600);
-    if (hours < 24) return `${hours}h ago`;
-    const days = Math.floor(diffInSeconds / 86400);
-    if (days < 30) return `${days}d ago`;
-    const months = Math.floor(days / 30);
-    if (months < 12) return `${months}mo ago`;
-    const years = Math.floor(days / 365);
-    return `${years}y ago`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
