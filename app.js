@@ -189,6 +189,21 @@ function applyStateToDOM() {
     });
 }
 
+function checkUnredeemedCodes() {
+    const notifDot = document.getElementById('codesNotification');
+    if (!notifDot || typeof baseCodes === 'undefined') return;
+
+    let redeemed = [];
+    try {
+        redeemed = JSON.parse(localStorage.getItem('fn_redeemed_codes')) || [];
+    } catch {
+        redeemed = [];
+    }
+
+    const hasUnredeemed = baseCodes.some(c => c.active && !redeemed.includes(c.code));
+    notifDot.hidden = !hasUnredeemed;
+}
+
 /* ===================================================
    Share Encoding / Decoding
    =================================================== */
