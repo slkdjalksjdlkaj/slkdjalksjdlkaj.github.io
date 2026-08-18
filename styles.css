@@ -914,10 +914,10 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
 
 .code-row {
     display: grid;
-    grid-template-columns: 1fr 2fr auto;
+    grid-template-columns: 1fr 1.5fr 1.2fr auto;
     align-items: center;
-    padding: 8px 16px;
-    border-bottom: 1px solid var(--border);
+    padding: 10px 16px;
+    gap: 12px;
 }
 
 .code-row:last-child {
@@ -943,6 +943,22 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
 .code-reward {
     font-size: 14px;
     color: var(--text);
+}
+
+/* Source Cell & Link Formatting */
+.code-source-cell {
+    font-size: 13px;
+    color: var(--text-soft);
+}
+
+.code-source-link {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.code-source-link:hover {
+    filter: brightness(1.2);
 }
 
 .code-card-actions {
