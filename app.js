@@ -1589,6 +1589,17 @@ function bindEvents() {
     });
 }
 
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const supportCodeBtn = document.getElementById('supportCodeBtn');
+    if (supportCodeBtn) {
+        supportCodeBtn.addEventListener('click', () => {
+            copyToClipboard('BATTER', supportCodeBtn);
+        });
+    }
+});
+
 /* ===================================================
    Initialization
    =================================================== */
@@ -1619,3 +1630,4 @@ function init() {
 }
 
 init();
+
