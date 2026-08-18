@@ -861,6 +861,7 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     align-items: center;
     gap: 8px;
     text-decoration: none;
+    color: #ffffff;
 }
 
 .notification-dot {
@@ -930,7 +931,7 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
 
 .code-value {
     font-weight: 700;
-    color: var(--mastered);
+    color: #ffffff;
     letter-spacing: 0.5px;
     cursor: pointer;
     user-select: all;
