@@ -848,3 +848,67 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     width: auto;
     object-fit: contain;
 }
+
+
+/* ==========================================================================
+   Codes Subpage & Notification Badge
+   ========================================================================== */
+
+/* Codes Toolbar Button & Badge */
+.btn-codes {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.notification-dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--missing);
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 6px var(--missing);
+}
+
+/* Codes Subpage Card Layout */
+.codes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.code-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 16px;
+    border-radius: var(--radius);
+}
+
+.code-card.redeemed {
+    opacity: 0.5;
+}
+
+.code-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.code-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--mastered);
+    letter-spacing: 1px;
+}
+
+.code-reward, 
+.code-source {
+    font-size: 13px;
+    color: var(--text-soft);
+}
