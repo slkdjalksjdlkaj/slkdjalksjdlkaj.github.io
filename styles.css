@@ -895,11 +895,18 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     overflow: hidden;
 }
 
-.codes-table-header {
+/* Matching 5-column layout for Header and Rows:
+   1: Code | 2: Reward (Centered) | 3: Source (Centered) | 4: Date (Centered) | 5: Action Buttons */
+.codes-table-header,
+.code-row {
     display: grid;
-    grid-template-columns: 1fr 2fr auto;
+    grid-template-columns: 1fr 1.5fr 1.2fr 0.8fr auto;
     align-items: center;
     padding: 10px 16px;
+    gap: 12px;
+}
+
+.codes-table-header {
     background: rgba(255, 255, 255, 0.03);
     border-bottom: 1px solid var(--border);
     font-size: 12px;
@@ -908,9 +915,10 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     color: var(--text-soft);
 }
 
-/* Header Text Alignment */
+/* Header Text Center Alignment */
 .codes-table-header span:nth-child(2),
-.codes-table-header span:nth-child(3) {
+.codes-table-header span:nth-child(3),
+.codes-table-header span:nth-child(4) {
     text-align: center;
 }
 
@@ -920,12 +928,7 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
 }
 
 .code-row {
-    display: grid;
-    /* Column 1: Code | Column 2: Reward (Centered) | Column 3: Source (Centered) | Column 4: Action Buttons */
-    grid-template-columns: 1fr 1.5fr 1.2fr auto;
-    align-items: center;
-    padding: 10px 16px;
-    gap: 12px;
+    border-bottom: 1px solid var(--border);
 }
 
 .code-row:last-child {
@@ -969,6 +972,14 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
 
 .code-source-link:hover {
     color: #60a5fa; /* Lighter blue on hover */
+}
+
+/* Date Cell Formatting */
+.code-date-cell {
+    font-size: 13px;
+    color: var(--text-soft);
+    text-align: center;
+    white-space: nowrap;
 }
 
 .code-card-actions {
