@@ -908,6 +908,12 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     color: var(--text-soft);
 }
 
+/* Header Text Alignment */
+.codes-table-header span:nth-child(2),
+.codes-table-header span:nth-child(3) {
+    text-align: center;
+}
+
 .codes-list {
     display: flex;
     flex-direction: column;
@@ -915,6 +921,7 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
 
 .code-row {
     display: grid;
+    /* Column 1: Code | Column 2: Reward (Centered) | Column 3: Source (Centered) | Column 4: Action Buttons */
     grid-template-columns: 1fr 1.5fr 1.2fr auto;
     align-items: center;
     padding: 10px 16px;
@@ -942,24 +949,26 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
 }
 
 .code-reward {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text);
+    text-align: center;
 }
 
 /* Source Cell & Link Formatting */
 .code-source-cell {
-    font-size: 13px;
+    font-size: 15px;
     color: var(--text-soft);
+    text-align: center;
 }
 
 .code-source-link {
-    color: var(--accent);
+    color: #3b82f6; /* Bright blue */
     text-decoration: underline;
     text-underline-offset: 2px;
 }
 
 .code-source-link:hover {
-    filter: brightness(1.2);
+    color: #60a5fa; /* Lighter blue on hover */
 }
 
 .code-card-actions {
