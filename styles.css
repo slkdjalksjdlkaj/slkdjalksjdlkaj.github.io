@@ -872,49 +872,6 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     box-shadow: 0 0 6px var(--missing);
 }
 
-/* Codes Subpage Card Layout */
-.codes-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 20px;
-}
-
-.code-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 16px;
-    border-radius: var(--radius);
-}
-
-.code-card.redeemed {
-    opacity: 0.5;
-}
-
-.code-info {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.code-value {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--mastered);
-    letter-spacing: 1px;
-}
-
-.code-reward, 
-.code-source {
-    font-size: 13px;
-    color: var(--text-soft);
-}
-
-
-/* Codes Subpage Specific Layout */
 .codes-toolbar .toolbar-row {
     display: flex;
     justify-content: space-between;
@@ -927,18 +884,76 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     gap: 8px;
 }
 
+.codes-table-container {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.codes-table-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr auto;
+    align-items: center;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-soft);
+}
+
+.codes-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.code-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr auto;
+    align-items: center;
+    padding: 8px 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.code-row:last-child {
+    border-bottom: none;
+}
+
+.code-row.redeemed {
+    opacity: 0.4;
+}
+
+.code-value {
+    font-weight: 700;
+    color: var(--mastered);
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    user-select: all;
+}
+
+.code-value:hover {
+    color: var(--accent);
+}
+
+.code-reward {
+    font-size: 14px;
+    color: var(--text);
+}
+
 .code-card-actions {
     display: flex;
     gap: 8px;
     align-items: center;
 }
 
-.code-value {
-    cursor: pointer;
-    user-select: all;
-    transition: color 0.2s ease;
-}
-
-.code-value:hover {
-    color: var(--accent);
+.codes-empty {
+    padding: 24px;
+    text-align: center;
+    color: var(--text-soft);
+    font-style: italic;
 }
