@@ -193,6 +193,22 @@ function checkUnredeemedCodes() {
     const notifDot = document.getElementById('codesNotification');
     if (!notifDot || typeof baseCodes === 'undefined') return;
 
+    // Check if the user has disabled code alerts
+    let showAlerts = true;
+    try {
+        const storedSetting = localStorage.getItem('fn_alert_new_codes');
+        if (storedSetting !== null) {
+            showAlerts = JSON.parse(storedSetting);
+        }
+    } catch {
+        showAlerts = true;
+    }
+
+    if (!showAlerts) {
+        notifDot.hidden = true;
+        return;
+    }
+
     let redeemed = [];
     try {
         redeemed = JSON.parse(localStorage.getItem('fn_redeemed_codes')) || [];
