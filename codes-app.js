@@ -1,5 +1,6 @@
 const REDEEMED_KEY = 'fn_redeemed_codes';
 const ALERT_SETTING_KEY = 'fn_alert_new_codes';
+const HIDE_REDEEMED_KEY = 'fn_hide_redeemed_codes';
 
 function getRedeemedCodes() {
     try {
@@ -47,22 +48,34 @@ function copyToClipboard(text, targetElement) {
 
 function renderCodes() {
     const list = document.getElementById('codesList');
+    const hideRedeemedToggle = document.getElementById('hideRedeemedToggle');
     if (!list) return;
 
     const redeemed = getRedeemedCodes();
+    const hideRedeemed = hideRedeemedToggle ? hideRedeemedToggle.checked : true;
+
     list.innerHTML = '';
 
-    baseCodes.forEach(item => {
-        const isRedeemed = redeemed.includes(item.code);
-        const card = document.createElement('div');
-        card.className = `code-card ${isRedeemed ? 'redeemed' : ''}`;
+    const filteredCodes = baseCodes.filter(item => {
+        if (hideRedeemed && redeemed.includes(item.code)) {
+            return false;
+        }
+        return true;
+    });
 
-        card.innerHTML = `
-            <div class="code-info">
-                <span class="code-value" title="Click to copy">${item.code}</span>
-                <span class="code-reward"><strong>Gives:</strong> ${item.reward}</span>
-                <span class="code-source"><strong>Source:</strong> ${item.source}</span>
-            </div>
+    if (filteredCodes.length === 0) {
+        list.innerHTML = '<div class="codes-empty">No codes to display</div>';
+        return;
+    }
+
+    filteredCodes.forEach(item => {
+        const isRedeemed = redeemed.includes(item.code);
+        const row = document.createElement('div');
+        row.className = `code-row ${isRedeemed ? 'redeemed' : ''}`;
+
+        row.innerHTML = `
+            <span class="code-value" title="Click to copy">${item.code}</span>
+            <span class="code-reward">${item.reward}</span>
             <div class="code-card-actions">
                 <button type="button" class="btn btn-copy">Copy Code</button>
                 <button type="button" class="btn btn-redeem ${isRedeemed ? '' : 'btn-accent'}">
@@ -72,18 +85,18 @@ function renderCodes() {
         `;
 
         // Click code name to copy
-        const codeValueEl = card.querySelector('.code-value');
+        const codeValueEl = row.querySelector('.code-value');
         codeValueEl.addEventListener('click', () => copyToClipboard(item.code, codeValueEl));
 
         // Copy button
-        const copyBtn = card.querySelector('.btn-copy');
+        const copyBtn = row.querySelector('.btn-copy');
         copyBtn.addEventListener('click', () => copyToClipboard(item.code, copyBtn));
 
         // Redeem button
-        const redeemBtn = card.querySelector('.btn-redeem');
+        const redeemBtn = row.querySelector('.btn-redeem');
         redeemBtn.addEventListener('click', () => toggleRedeem(item.code));
 
-        list.appendChild(card);
+        list.appendChild(row);
     });
 }
 
@@ -91,6 +104,7 @@ function initToolbar() {
     const redeemAllBtn = document.getElementById('redeemAllBtn');
     const unredeemAllBtn = document.getElementById('unredeemAllBtn');
     const alertToggle = document.getElementById('alertNewCodesToggle');
+    const hideRedeemedToggle = document.getElementById('hideRedeemedToggle');
 
     if (redeemAllBtn) redeemAllBtn.addEventListener('click', redeemAll);
     if (unredeemAllBtn) unredeemAllBtn.addEventListener('click', unredeemAll);
@@ -102,6 +116,17 @@ function initToolbar() {
 
         alertToggle.addEventListener('change', (e) => {
             localStorage.setItem(ALERT_SETTING_KEY, JSON.stringify(e.target.checked));
+        });
+    }
+
+    // Hide redeemed setting toggle persistence
+    if (hideRedeemedToggle) {
+        const storedSetting = localStorage.getItem(HIDE_REDEEMED_KEY);
+        hideRedeemedToggle.checked = storedSetting !== null ? JSON.parse(storedSetting) : true;
+
+        hideRedeemedToggle.addEventListener('change', (e) => {
+            localStorage.setItem(HIDE_REDEEMED_KEY, JSON.stringify(e.target.checked));
+            renderCodes();
         });
     }
 }
