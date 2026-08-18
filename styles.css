@@ -895,24 +895,28 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     overflow: hidden;
 }
 
-/* Matching 5-column layout for Header and Rows:
-   1: Code | 2: Reward (Centered) | 3: Source (Centered) | 4: Date (Centered) | 5: Action Buttons */
-.codes-table-header,
-.code-row {
+/* Matching layout for Header and Rows:
+   1: Code | 2: Reward (Centered) | 3: Source (Centered) | 4: Date (Centered) */
+.codes-table-header {
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1.2fr 0.8fr auto;
+    grid-template-columns: 1fr 1.5fr 1.2fr 1fr;
     align-items: center;
     padding: 10px 16px;
     gap: 12px;
-}
-
-.codes-table-header {
     background: rgba(255, 255, 255, 0.03);
     border-bottom: 1px solid var(--border);
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 1px;
     color: var(--text-soft);
+}
+
+.code-row {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.2fr 0.8fr auto;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 12px;
 }
 
 /* Header Text Center Alignment */
