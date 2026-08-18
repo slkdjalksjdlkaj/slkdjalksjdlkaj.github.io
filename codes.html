@@ -32,6 +32,10 @@
                     <input type="checkbox" id="alertNewCodesToggle" checked>
                     <span>Alert for new codes</span>
                 </label>
+                <label class="switch">
+                    <input type="checkbox" id="hideRedeemedToggle" checked>
+                    <span>Hide redeemed codes</span>
+                </label>
             </div>
             <div class="codes-actions">
                 <button type="button" id="redeemAllBtn" class="btn btn-accent">Redeem All</button>
@@ -40,8 +44,15 @@
         </div>
     </nav>
 
-    <main class="codes-container" id="codesList">
-        <!-- Codes rendered via JavaScript -->
+    <main class="codes-table-container">
+        <div class="codes-table-header">
+            <span>CODE</span>
+            <span>REWARD</span>
+            <span></span>
+        </div>
+        <div class="codes-list" id="codesList">
+            <!-- Codes rendered via JavaScript -->
+        </div>
     </main>
 </div>
 
