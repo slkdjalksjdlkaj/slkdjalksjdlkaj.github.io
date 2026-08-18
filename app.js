@@ -1597,12 +1597,12 @@ function showFloatingCopyText(anchorElement) {
     textEl.className = 'floating-copy-text';
     textEl.textContent = 'Code copied to clipboard!';
 
-    // Get position of anchor element
+    // Calculate absolute position on the viewport
     const rect = anchorElement.getBoundingClientRect();
     const startX = rect.left + rect.width / 2;
     const startY = rect.top;
 
-    // Random horizontal angle (-25px to +25px offset)
+    // Random horizontal trajectory (-25px to +25px offset)
     const randomAngleX = (Math.random() - 0.5) * 50;
     const endY = -40 - Math.random() * 20; // Float up 40px to 60px
 
@@ -1621,33 +1621,46 @@ function showFloatingCopyText(anchorElement) {
 
 function copySupportCode(buttonEl) {
     const code = buttonEl.textContent.trim();
-    
+
+    // Trigger visual feedback immediately on user click
+    showFloatingCopyText(buttonEl);
+
     // Attempt clipboard write
-    if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(code).then(() => {
-            showFloatingCopyText(buttonEl);
-        }).catch(() => {
-            fallbackCopy(code, buttonEl);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).catch(() => {
+            fallbackCopy(code);
         });
     } else {
-        fallbackCopy(code, buttonEl);
+        fallbackCopy(code);
     }
 }
 
-function fallbackCopy(text, buttonEl) {
+function fallbackCopy(text) {
     const textArea = document.createElement('textarea');
     textArea.value = text;
+    
+    // Prevent scrolling or zooming on mobile Safari/Chrome
     textArea.style.position = 'fixed';
-    textArea.style.opacity = '0';
+    textArea.style.top = '0';
+    textArea.style.left = '0';
+    textArea.style.width = '2em';
+    textArea.style.height = '2em';
+    textArea.style.padding = '0';
+    textArea.style.border = 'none';
+    textArea.style.outline = 'none';
+    textArea.style.boxShadow = 'none';
+    textArea.style.background = 'transparent';
+    
     document.body.appendChild(textArea);
     textArea.focus();
     textArea.select();
+
     try {
         document.execCommand('copy');
-        showFloatingCopyText(buttonEl);
     } catch (err) {
-        console.error('Failed to copy: ', err);
+        console.error('Fallback copy failed:', err);
     }
+
     document.body.removeChild(textArea);
 }
 
