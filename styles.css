@@ -912,3 +912,33 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     font-size: 13px;
     color: var(--text-soft);
 }
+
+
+/* Codes Subpage Specific Layout */
+.codes-toolbar .toolbar-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.codes-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.code-card-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.code-value {
+    cursor: pointer;
+    user-select: all;
+    transition: color 0.2s ease;
+}
+
+.code-value:hover {
+    color: var(--accent);
+}
