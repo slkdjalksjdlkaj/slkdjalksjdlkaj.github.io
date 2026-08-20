@@ -7,7 +7,7 @@ const baseCodes = [
     { code: "DontBlockMe", reward: "Turns you into a Tetrimino.", internalreward: null, source: "Fortnite Discord", link: "", active: true },
     { code: "LetsBlockAndRoll", reward: "Turns you into a Tetrimino.", internalreward: null, source: "Fortnite Discord", link: "", active: true },
     { code: "GottaGoFast", reward: "Cheat Master Sonic Sprite", internalreward: "sonic_cheat", source: "Fortnite Discord", link: "https://x.com/FireMonkey/status/2086832948829901078", active: true },
-    { code: "IWannaFlyHigh", reward: "Cheat Master Tails Sprite", internalreward: "adventure_tails", source: "Fortnite Discord", link: "", date: "2026-08-20", active: true },
+    { code: "IWannaFlyHigh", reward: "Cheat Master Tails Sprite", internalreward: "tails_cheat", source: "Fortnite Discord", link: "", date: "2026-08-20", active: true },
     { code: "TakeYourHeart", reward: "2 Extraction Accelerators", internalreward: null, source: "ATLUS West", link: "https://x.com/Atlus_West/status/2087932899559412182", active: true },
     { code: "PerfectOrder", reward: "4 Spicy Tacos", internalreward: null, source: "Fortnite Discord", link: "https://x.com/FireMonkey/status/2086838594920972718", active: true },
     { code: "O2Override", reward: "1 Llama Supply Drop & 1 Portable Extractor", internalreward: null, source: "O2", link: "https://x.com/FireMonkey/status/2088224016565780563", active: true },
