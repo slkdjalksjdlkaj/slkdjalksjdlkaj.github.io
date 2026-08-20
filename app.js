@@ -191,9 +191,9 @@ function applyStateToDOM() {
 
 function checkUnredeemedCodes() {
     const notifDot = document.getElementById('codesNotification');
-    if (!notifDot || typeof baseCodes === 'undefined') return;
+    const codesBtn = document.getElementById('codesBtn');
+    if (typeof baseCodes === 'undefined') return;
 
-    // Check if the user has disabled code alerts
     let showAlerts = true;
     try {
         const storedSetting = localStorage.getItem('fn_alert_new_codes');
@@ -205,7 +205,8 @@ function checkUnredeemedCodes() {
     }
 
     if (!showAlerts) {
-        notifDot.hidden = true;
+        if (notifDot) notifDot.hidden = true;
+        if (codesBtn) codesBtn.classList.remove('btn-hack-active');
         return;
     }
 
@@ -217,7 +218,19 @@ function checkUnredeemedCodes() {
     }
 
     const hasUnredeemed = baseCodes.some(c => c.active && !redeemed.includes(c.code));
-    notifDot.hidden = !hasUnredeemed;
+    if (notifDot) notifDot.hidden = !hasUnredeemed;
+
+    // Outline button if any unredeemed code matches an uncollected sprite
+    const hasUncollectedReward = baseCodes.some(c => 
+        c.active && 
+        !redeemed.includes(c.code) && 
+        c.internalreward && 
+        !isObtained(c.internalreward)
+    );
+
+    if (codesBtn) {
+        codesBtn.classList.toggle('btn-hack-active', hasUncollectedReward);
+    }
 }
 
 /* ===================================================
@@ -518,11 +531,25 @@ function renderGrid() {
     let items = filterSprites();
     items = sortSprites(items, state.settings.sortOrder);
 
+    // Get unredeemed active code rewards
+    let redeemed = [];
+    try {
+        redeemed = JSON.parse(localStorage.getItem('fn_redeemed_codes')) || [];
+    } catch {
+        redeemed = [];
+    }
+    const hackableRewards = new Set(
+        baseCodes
+            .filter(c => c.active && !redeemed.includes(c.code) && c.internalreward)
+            .map(c => c.internalreward)
+    );
+
     const frag = document.createDocumentFragment();
 
     for (const sprite of items) {
         const obtained = isObtained(sprite.id);
         const mastered = isMastered(sprite.id);
+        const hasHack = !obtained && hackableRewards.has(sprite.id);
 
         const card = document.createElement('div');
         card.dataset.id = sprite.id;
@@ -530,7 +557,9 @@ function renderGrid() {
         const classes = ['card', `rarity-${sprite.rarity}`, `theme-${sprite.theme}`];
         if (obtained) classes.push('obtained');
         if (mastered) classes.push('mastered');
+        if (hasHack) classes.push('hack-available');
         card.className = classes.join(' ');
+
         if (!state.viewMode) {
             card.tabIndex = 0;
             card.setAttribute('role', 'button');
@@ -538,7 +567,12 @@ function renderGrid() {
             card.setAttribute('aria-label', `${obtained ? 'Remove' : 'Mark'} ${sprite.name} ${obtained ? 'from' : 'as part of'} your collection`);
         }
 
-        card.innerHTML = buildCardHTML(sprite, obtained, mastered);
+        let cardHTML = buildCardHTML(sprite, obtained, mastered);
+        if (hasHack) {
+            cardHTML = `<div class="hack-badge">Hack Available</div>` + cardHTML;
+        }
+
+        card.innerHTML = cardHTML;
         frag.appendChild(card);
     }
 
@@ -1703,6 +1737,7 @@ function init() {
     applyStateToDOM();
     renderGrid();
     bindEvents();
+    checkUnredeemedCodes();
 }
 
 init();
