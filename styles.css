@@ -1150,12 +1150,12 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     pointer-events: none;
     z-index: 1;
     opacity: 0.25;
-    background-image: 
+background-image: 
         linear-gradient(180deg, 
             transparent 0%, 
             #00ff41 20%, 
             transparent 40%, 
-            #0f0 60%, 
+            #00ff41 60%, 
             transparent 80%, 
             #00ff41 100%
         ),
