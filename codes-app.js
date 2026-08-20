@@ -140,4 +140,10 @@ function initToolbar() {
 document.addEventListener('DOMContentLoaded', () => {
     initToolbar();
     renderCodes();
+
+    // click to copy creator code stuff
+    const supportBtn = document.getElementById('supportCodeBtn');
+    if (supportBtn) {
+        supportBtn.addEventListener('click', () => copyToClipboard('BATTER', supportBtn));
+    }
 });
