@@ -1140,30 +1140,41 @@ body.low-fidelity .card.theme-Cheat::before {
     }
 }
 
-/* Purple Outline for Sprite Cards with Available Hacks */
+/* Card with Available Hack - High Z-Index & Full Opacity */
 .card.hack-available {
     outline: 2px solid #a855f7 !important;
     outline-offset: -2px;
-    box-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.7) !important;
+    /* Prevent opacity dimming applied to unobtained/uncollected cards */
+    opacity: 1 !important; 
+    filter: none !important;
 }
 
-/* Notification badge floating above the card */
+/* Ensure card acts as positioning context */
+.card {
+    position: relative;
+}
+
+/* Hack Badge Centered Over the Sprite Image & Text */
 .hack-badge {
     position: absolute;
-    top: -10px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    background: #a855f7;
+    transform: translate(-50%, -50%);
+    background: rgba(168, 85, 247, 0.95);
     color: #ffffff;
-    font-size: 10px;
-    font-weight: 700;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
-    padding: 2px 6px;
-    border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-    z-index: 10;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #ffffff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6), 0 0 8px rgba(168, 85, 247, 0.8);
+    z-index: 20;
     white-space: nowrap;
     pointer-events: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Purple outline on the Lobby Hacks button */
