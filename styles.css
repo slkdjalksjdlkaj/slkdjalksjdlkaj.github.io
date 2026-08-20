@@ -1080,3 +1080,62 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
         transform: translate(calc(-50% + var(--target-x, 0px)), var(--target-y, -50px)) scale(0.95);
     }
 }
+
+/* Cheat Sprite Theme Styles */
+
+/* Theme Card Base */
+.card.theme-Cheat {
+    background: linear-gradient(180deg, #002b00 0%, #000a00 100%);
+    border-color: #00ff41;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Matrix Code Falling Animation Overlay */
+.card.theme-Cheat::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.25;
+    background-image: 
+        linear-gradient(180deg, 
+            transparent 0%, 
+            #00ff41 20%, 
+            transparent 40%, 
+            #0f0 60%, 
+            transparent 80%, 
+            #00ff41 100%
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 4px,
+            rgba(0, 255, 65, 0.3) 5px,
+            transparent 6px
+        );
+    background-size: 100% 50px, 12px 100%;
+    animation: matrixFall 4s linear infinite;
+}
+
+/* Low-fidelity Fallback (Disables animation for performance) */
+body.low-fidelity .card.theme-Cheat::before {
+    animation: none;
+    top: 0;
+    height: 100%;
+    opacity: 0.15;
+}
+
+/* Keyframes for smooth performant movement */
+@keyframes matrixFall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(50px);
+    }
+}
