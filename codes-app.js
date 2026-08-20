@@ -102,41 +102,58 @@ function renderCodes() {
         return;
     }
 
+    // Group items by category key (e.g. "cat1")
+    const grouped = {};
     filteredCodes.forEach(item => {
-        const isRedeemed = redeemed.includes(item.code);
-        const row = document.createElement('div');
-        row.className = `code-row ${isRedeemed ? 'redeemed' : ''}`;
+        const catKey = item.category || 'cat4';
+        if (!grouped[catKey]) grouped[catKey] = [];
+        grouped[catKey].push(item);
+    });
 
-        // Format Source link or plain text
-        const sourceHtml = item.link && item.link.trim() !== ''
-            ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer" class="code-source-link">${item.source || ''}</a>`
-            : `<span class="code-source">${item.source || ''}</span>`;
+    // Render categories in order using codeCategories map for the header title
+    CATEGORY_ORDER.forEach(catKey => {
+        if (!grouped[catKey] || grouped[catKey].length === 0) return;
 
-        row.innerHTML = `
-            <span class="code-value" title="Click to copy">${item.code}</span>
-            <span class="code-reward">${item.reward}</span>
-            <div class="code-source-cell">${sourceHtml}</div>
-            <div class="code-card-actions">
-                <button type="button" class="btn btn-copy">Copy Code</button>
-                <button type="button" class="btn btn-redeem ${isRedeemed ? '' : 'btn-accent'}">
-                    ${isRedeemed ? 'Redeemed' : 'Mark Redeemed'}
-                </button>
-            </div>
-        `;
+        // Header lookup: gets full string title from codeCategories map
+        const categoryTitle = codeCategories[catKey] || "Miscellaneous";
 
-        // Click code name to copy
-        const codeValueEl = row.querySelector('.code-value');
-        codeValueEl.addEventListener('click', () => copyToClipboard(item.code, codeValueEl));
+        const sectionHeader = document.createElement('div');
+        sectionHeader.className = 'code-category-header';
+        sectionHeader.textContent = categoryTitle;
+        list.appendChild(sectionHeader);
 
-        // Copy button
-        const copyBtn = row.querySelector('.btn-copy');
-        copyBtn.addEventListener('click', () => copyToClipboard(item.code, copyBtn));
+        grouped[catKey].forEach(item => {
+            const isRedeemed = redeemed.includes(item.code);
+            const row = document.createElement('div');
+            row.className = `code-row ${isRedeemed ? 'redeemed' : ''}`;
 
-        // Redeem button
-        const redeemBtn = row.querySelector('.btn-redeem');
-        redeemBtn.addEventListener('click', () => toggleRedeem(item.code));
+            const sourceHtml = item.link && item.link.trim() !== ''
+                ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer" class="code-source-link">${item.source || ''}</a>`
+                : `<span class="code-source">${item.source || ''}</span>`;
 
-        list.appendChild(row);
+            row.innerHTML = `
+                <span class="code-value" title="Click to copy">${item.code}</span>
+                <span class="code-reward">${item.reward}</span>
+                <div class="code-source-cell">${sourceHtml}</div>
+                <div class="code-card-actions">
+                    <button type="button" class="btn btn-copy">Copy Code</button>
+                    <button type="button" class="btn btn-redeem ${isRedeemed ? '' : 'btn-accent'}">
+                        ${isRedeemed ? 'Redeemed' : 'Mark Redeemed'}
+                    </button>
+                </div>
+            `;
+
+            const codeValueEl = row.querySelector('.code-value');
+            codeValueEl.addEventListener('click', () => copyToClipboard(item.code, codeValueEl));
+
+            const copyBtn = row.querySelector('.btn-copy');
+            copyBtn.addEventListener('click', () => copyToClipboard(item.code, copyBtn));
+
+            const redeemBtn = row.querySelector('.btn-redeem');
+            redeemBtn.addEventListener('click', () => toggleRedeem(item.code));
+
+            list.appendChild(row);
+        });
     });
 }
 
