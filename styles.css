@@ -952,13 +952,6 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Header Text Center Alignment */
-.codes-table-header span:nth-child(2),
-.codes-table-header span:nth-child(3),
-.codes-table-header span:nth-child(4) {
-    text-align: center;
-}
-
 /* Indented sub-collection items container */
 .code-category-items {
     padding-left: 16px;
