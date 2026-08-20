@@ -18,6 +18,7 @@ const baseCodes = [
     { code: "GottaGoFast", reward: "Cheat Master Sonic Sprite", internalreward: "sonic_cheat", category: "cat1", active: true },
     { code: "IWannaFlyHigh", reward: "Cheat Master Tails Sprite", internalreward: "tails_cheat", category: "cat1", active: true },
     { code: "Play4All", reward: "Cheat Master Jonesy Sprite", internalreward: "jonesy_cheat", category: "cat1", active: true },
+    { code: "GatherAndCraft", reward: "Cheat Master Bush Sprite", internalreward: "bush_cheat", category: "cat1", active: true },
 
     // --- cat2
     { code: "BeMoreAlien", reward: "Override Ready Loading Screen", internalreward: null, category: "cat2", active: true },
