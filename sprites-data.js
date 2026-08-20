@@ -184,9 +184,9 @@ const baseSprites = [
     { id: "8bit_gold", name: "Gold 8-Bit", theme: "Gold", rarity: "Special", unreleased: true, season: "Override" },
     { id: "8bit_cheat", name: "Cheat Master 8-Bit", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
 	
-    { id: "stormking_basic", name: "Storm Scout", theme: "Basic", rarity: "Rare", unreleased: false, season: "Override" },
+    { id: "stormking_basic", name: "Storm Scout", theme: "Basic", rarity: "Rare", unreleased: true, season: "Override" },
     { id: "stormking_gold", name: "Gold Storm Scout", theme: "Gold", rarity: "Special", unreleased: true, season: "Override" },
-    { id: "stormking_cheat", name: "Cheat Master Storm Scout", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
+    { id: "stormking_cheat", name: "Cheat Master Storm Scout", theme: "Cheat", rarity: "Special", unreleased: true, season: "Override" },
 
     { id: "killswitch_basic", name: "Killswitch", theme: "Basic", rarity: "Epic", unreleased: false, season: "Override" },
     { id: "killswitch_gold", name: "Gold Killswitch", theme: "Gold", rarity: "Special", unreleased: true, season: "Override" },
