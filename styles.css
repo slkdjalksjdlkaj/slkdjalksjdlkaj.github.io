@@ -1237,3 +1237,59 @@ body.low-fidelity .card.theme-Cheat::before {
     outline: 2px solid #a855f7 !important;
     box-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
 }
+
+/* mobile codes page stuff */
+
+@media (max-width: 640px) {
+    /* Reduce outer group padding for tight screens */
+    .code-category-group {
+        padding: 12px 10px 14px 10px;
+    }
+
+    /* Remove sub-item left indent to maximize horizontal space */
+    .code-category-items {
+        padding-left: 0;
+    }
+
+    /* Hide the desktop grid header message on mobile */
+    .codes-table-header {
+        display: none;
+    }
+
+    /* Convert row grid into a stacked vertical card layout */
+    .code-category-items .code-row {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 12px;
+        border-left: 3px solid #a855f7;
+        margin-bottom: 6px;
+    }
+
+    /* Make code value prominent at the top */
+    .code-value {
+        font-size: 1.1rem;
+        word-break: break-all;
+    }
+
+    /* Reward text spans naturally below code */
+    .code-reward {
+        font-size: 0.88rem;
+        line-height: 1.35;
+    }
+
+    /* Full-width action container aligned to bottom right */
+    .code-card-actions {
+        width: 100%;
+        justify-content: flex-end;
+        padding-top: 4px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Touch-friendly full-width or large copy button */
+    .code-card-actions .btn {
+        width: 100%;
+        min-height: 40px;
+    }
+}
