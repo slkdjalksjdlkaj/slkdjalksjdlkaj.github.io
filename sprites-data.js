@@ -93,33 +93,13 @@ const baseSprites = [
     { id: "punk_gem", name: "Gem Punk", theme: "Gem", rarity: "Special", unreleased: true, season: "Unknown" },
     { id: "punk_rift", name: "Cube Punk", theme: "Cube", rarity: "Special", unreleased: false, season: "Runners" },
 
-    { id: "zeropoint_basic", name: "Zero Point", theme: "Basic", rarity: "Mythic", unreleased: false, season: "Runners" },
-    { id: "zeropoint_gold", name: "Gold Zero Point", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
-    { id: "zeropoint_candy", name: "Gummy Zero Point", theme: "Candy", rarity: "Special", unreleased: false, season: "Runners" },
-    { id: "zeropoint_galaxy", name: "Galaxy Zero Point", theme: "Galaxy", rarity: "Special", unreleased: false, season: "Runners" },
-    { id: "zeropoint_gem", name: "Gem Zero Point", theme: "Gem", rarity: "Special", unreleased: false, season: "Runners" },
-	{ id: "zeropoint_holofoil", name: "Holofoil Zero Point", theme: "Holofoil", rarity: "Special", unreleased: false, season: "Runners" },
-	{ id: "zeropoint_quack", name: "Quack Zero Point", theme: "Quack", rarity: "Special", unreleased: false, season: "Runners" },
-	{ id: "zeropoint_rift", name: "Cube Zero Point", theme: "Cube", rarity: "Special", unreleased: false, season: "Runners" },
-	
-    { id: "theburntpeanut_basic", name: "Burnt Peanut", theme: "Basic", rarity: "Mythic", unreleased: false, season: "Runners" },
-
-    { id: "boss_basic", name: "Boss", theme: "Basic", rarity: "Legendary", unreleased: false, season: "Runners" },
+	{ id: "boss_basic", name: "Boss", theme: "Basic", rarity: "Legendary", unreleased: false, season: "Runners" },
     { id: "boss_gold", name: "Gold Boss", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "boss_candy", name: "Gummy Boss", theme: "Candy", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "boss_galaxy", name: "Galaxy Boss", theme: "Galaxy", rarity: "Special", unreleased: false, season: "Runners" },
 	// { id: "boss_gem", name: "Gem Boss", theme: "Gem", rarity: "Special", unreleased: true, season: "Unknown" },
 	//	{ id: "boss_holofoil", name: "Holofoil Boss", theme: "Holofoil", rarity: "Special", unreleased: false, season: "Unknown" },
 	{ id: "boss_rift", name: "Cube Boss", theme: "Cube", rarity: "Special", unreleased: false, season: "Runners" },
-
-
-    { id: "grim_basic", name: "Grim", theme: "Basic", rarity: "Mythic", unreleased: false, season: "Runners" },
-    { id: "grim_gold", name: "Gold Grim", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
-    { id: "grim_candy", name: "Gummy Grim", theme: "Candy", rarity: "Special", unreleased: false, season: "Runners" },
-    { id: "grim_galaxy", name: "Galaxy Grim", theme: "Galaxy", rarity: "Special", unreleased: false, season: "Runners" },
-	{ id: "grim_gem", name: "Gem Grim", theme: "Gem", rarity: "Special", unreleased: false, season: "Runners" },
-	{ id: "grim_holofoil", name: "Holofoil Grim", theme: "Holofoil", rarity: "Special", unreleased: false, season: "Runners" },
-	{ id: "grim_rift", name: "Cube Grim", theme: "Cube", rarity: "Special", unreleased: false, season: "Runners" },
 	
     { id: "seven_basic", name: "Seven", theme: "Basic", rarity: "Legendary", unreleased: false, season: "Runners" },
     { id: "seven_gold", name: "Gold Seven", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
@@ -127,19 +107,7 @@ const baseSprites = [
     { id: "seven_galaxy", name: "Galaxy Seven", theme: "Galaxy", rarity: "Special", unreleased: false, season: "Runners" },
 	//	{ id: "seven_gem", name: "Gem Seven", theme: "Gem", rarity: "Special", unreleased: true, season: "Unknown" },
     { id: "seven_holofoil", name: "Holofoil Seven", theme: "Holofoil", rarity: "Special", unreleased: false, season: "Runners" },
-
-	{ id: "batman_basic", name: "Batman", theme: "Basic", rarity: "Mythic", unreleased: false, season: "Runners" },
-    { id: "batman_gold", name: "Gold Batman", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
-    { id: "batman_candy", name: "Gummy Batman", theme: "Candy", rarity: "Special", unreleased: false, season: "Runners" },
-    { id: "batman_galaxy", name: "Galaxy Batman", theme: "Galaxy", rarity: "Special", unreleased: false, season: "Runners" },
-    //	{ id: "batman_gem", name: "Gem Batman", theme: "Gem", rarity: "Special", unreleased: false, season: "Unknown" },
-    { id: "batman_holofoil", name: "Holofoil Batman", theme: "Holofoil", rarity: "Special", unreleased: false, season: "Runners" },
-	{ id: "batman_rift", name: "Cube Batman", theme: "Cube", rarity: "Special", unreleased: false, season: "Runners" },
-
-	{ id: "pollo_basic", name: "Pollo", theme: "Basic", rarity: "Mythic", unreleased: false, season: "Runners" },
-
-	{ id: "vini_basic", name: "Vini Jr.", theme: "Basic", rarity: "Mythic", unreleased: false, season: "Runners" },
-
+	
 	{ id: "llama_basic", name: "Llama", theme: "Basic", rarity: "Legendary", unreleased: false, season: "Runners" },
 	{ id: "llama_gold", name: "Gold Llama", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "llama_candy", name: "Gummy Llama", theme: "Candy", rarity: "Special", unreleased: false, season: "Runners" },
@@ -156,16 +124,40 @@ const baseSprites = [
     { id: "peely_holofoil", name: "Holofoil Peely", theme: "Holofoil", rarity: "Special", unreleased: false, season: "Runners" },
 	//	{ id: "peely_rift", name: "Cube Peely", theme: "Cube", rarity: "Special", unreleased: false, season: "Unknown" },
 	
+    { id: "zeropoint_basic", name: "Zero Point", theme: "Basic", rarity: "Mythic", unreleased: false, season: "Runners" },
+    { id: "zeropoint_gold", name: "Gold Zero Point", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
+    { id: "zeropoint_candy", name: "Gummy Zero Point", theme: "Candy", rarity: "Special", unreleased: false, season: "Runners" },
+    { id: "zeropoint_galaxy", name: "Galaxy Zero Point", theme: "Galaxy", rarity: "Special", unreleased: false, season: "Runners" },
+    { id: "zeropoint_gem", name: "Gem Zero Point", theme: "Gem", rarity: "Special", unreleased: false, season: "Runners" },
+	{ id: "zeropoint_holofoil", name: "Holofoil Zero Point", theme: "Holofoil", rarity: "Special", unreleased: false, season: "Runners" },
+	{ id: "zeropoint_quack", name: "Quack Zero Point", theme: "Quack", rarity: "Special", unreleased: false, season: "Runners" },
+	{ id: "zeropoint_rift", name: "Cube Zero Point", theme: "Cube", rarity: "Special", unreleased: false, season: "Runners" },
+	
+    { id: "theburntpeanut_basic", name: "Burnt Peanut", theme: "Basic", rarity: "Mythic", unreleased: false, season: "Runners" },
+
+    { id: "grim_basic", name: "Grim", theme: "Basic", rarity: "Mythic", unreleased: false, season: "Runners" },
+    { id: "grim_gold", name: "Gold Grim", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
+    { id: "grim_candy", name: "Gummy Grim", theme: "Candy", rarity: "Special", unreleased: false, season: "Runners" },
+    { id: "grim_galaxy", name: "Galaxy Grim", theme: "Galaxy", rarity: "Special", unreleased: false, season: "Runners" },
+	{ id: "grim_gem", name: "Gem Grim", theme: "Gem", rarity: "Special", unreleased: false, season: "Runners" },
+	{ id: "grim_holofoil", name: "Holofoil Grim", theme: "Holofoil", rarity: "Special", unreleased: false, season: "Runners" },
+	{ id: "grim_rift", name: "Cube Grim", theme: "Cube", rarity: "Special", unreleased: false, season: "Runners" },
+
+	{ id: "batman_basic", name: "Batman", theme: "Basic", rarity: "Mythic", unreleased: false, season: "Runners" },
+    { id: "batman_gold", name: "Gold Batman", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
+    { id: "batman_candy", name: "Gummy Batman", theme: "Candy", rarity: "Special", unreleased: false, season: "Runners" },
+    { id: "batman_galaxy", name: "Galaxy Batman", theme: "Galaxy", rarity: "Special", unreleased: false, season: "Runners" },
+    //	{ id: "batman_gem", name: "Gem Batman", theme: "Gem", rarity: "Special", unreleased: false, season: "Unknown" },
+    { id: "batman_holofoil", name: "Holofoil Batman", theme: "Holofoil", rarity: "Special", unreleased: false, season: "Runners" },
+	{ id: "batman_rift", name: "Cube Batman", theme: "Cube", rarity: "Special", unreleased: false, season: "Runners" },
+
+	{ id: "pollo_basic", name: "Pollo", theme: "Basic", rarity: "Mythic", unreleased: false, season: "Runners" },
+
+	{ id: "vini_basic", name: "Vini Jr.", theme: "Basic", rarity: "Mythic", unreleased: false, season: "Runners" },
+	
 	{ id: "ironmouse_basic", name: "Ironmouse", theme: "Basic", rarity: "Mythic", unreleased: false, season: "Runners" },
 	
 	{ id: "wick_basic", name: "John Wick", theme: "Basic", rarity: "Mythic", unreleased: false, season: "Runners" },
-
-	{ id: "xray_basic", name: "X-Ray", theme: "Basic", rarity: "Mythic", unreleased: true, season: "Override" },
-	{ id: "pond_basic", name: "Pond", theme: "Basic", rarity: "Mythic", unreleased: true, season: "Override" },
-	{ id: "honey_basic", name: "Honey", theme: "Basic", rarity: "Mythic", unreleased: true, season: "Override" },
-	{ id: "dumpster_basic", name: "Dumpster Dive", theme: "Basic", rarity: "Mythic", unreleased: true, season: "Override" },
-	{ id: "bullet_basic", name: "Bullet", theme: "Basic", rarity: "Mythic", unreleased: true, season: "Override" },
-
 
     { id: "bush_basic", name: "Bush", theme: "Basic", rarity: "Rare", unreleased: false, season: "Override" },
     { id: "bush_gold", name: "Gold Bush", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
@@ -215,9 +207,10 @@ const baseSprites = [
     { id: "crown_gold", name: "Gold Crown", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
     { id: "crown_cheat", name: "Cheat Master Crown", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
 	
+	{ id: "xray_basic", name: "X-Ray", theme: "Basic", rarity: "Mythic", unreleased: true, season: "Override" },
+	{ id: "pond_basic", name: "Pond", theme: "Basic", rarity: "Mythic", unreleased: true, season: "Override" },
+	{ id: "honey_basic", name: "Honey", theme: "Basic", rarity: "Mythic", unreleased: true, season: "Override" },
+	{ id: "dumpster_basic", name: "Dumpster Dive", theme: "Basic", rarity: "Mythic", unreleased: true, season: "Override" },
+	{ id: "bullet_basic", name: "Bullet", theme: "Basic", rarity: "Mythic", unreleased: true, season: "Override" },
 
-
-
-
-	
 ];
