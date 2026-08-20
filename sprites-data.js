@@ -69,7 +69,7 @@ const baseSprites = [
     { id: "king_galaxy", name: "Galaxy King", theme: "Galaxy", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "king_holofoil", name: "Holofoil King", theme: "Holofoil", rarity: "Special", unreleased: false, season: "Runners" },
 	{ id: "king_rift", name: "Cube King", theme: "Cube", rarity: "Special", unreleased: true, season: "Override" },
-	{ id: "king_gem", name: "Cube King", theme: "Gem", rarity: "Special", unreleased: true, season: "Override" },
+	{ id: "king_gem", name: "Gem King", theme: "Gem", rarity: "Special", unreleased: true, season: "Override" },
 	
     { id: "striker_basic", name: "Striker", theme: "Basic", rarity: "Epic", unreleased: false, season: "Runners" },
     { id: "striker_gold", name: "Gold Striker", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
