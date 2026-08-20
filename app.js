@@ -16,7 +16,7 @@ const KEYS = {
     season: 'fn_state_season',
 };
 
-const THEME_ORDER = ['Basic', 'Gold', 'Candy', 'Galaxy', 'Gem', 'Holofoil', 'Cube', 'Rift', 'Quack'];
+const THEME_ORDER = ['Basic', 'Gold', 'Candy', 'Galaxy', 'Gem', 'Holofoil', 'Cube', 'Rift', 'Quack', 'Cheat'];
 const RARITY_ORDER = ['Mythic', 'Legendary', 'Epic', 'Rare', 'Special'];
 const STATUS_FILTERS = ['all', 'owned', 'missing'];
 const SORT_METHODS = ['theme', 'sprite', 'name', 'rarity'];
@@ -646,6 +646,7 @@ function getRarityGradient(rarity, theme) {
         Cube: ['#4c1d95', '#1e0b3d'],
         Rift: ['#154b5e', '#04161c'],
         Quack: ['#322554', '#12091f'],
+        Cheat: ['#003b00', '#000800'],
     };
     return themes[theme] || themes.Basic;
 }
