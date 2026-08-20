@@ -36,14 +36,48 @@ function unredeemAll() {
     renderCodes();
 }
 
-function copyToClipboard(text, targetElement) {
-    navigator.clipboard.writeText(text).then(() => {
-        const originalText = targetElement.textContent;
-        targetElement.textContent = "Copied!";
-        setTimeout(() => {
-            targetElement.textContent = originalText;
-        }, 1200);
+// Floating copy notification & clipboard helper
+function showFloatingCopyText(anchorElement) {
+    const textEl = document.createElement('div');
+    textEl.className = 'floating-copy-text';
+    textEl.textContent = 'Code copied to clipboard!';
+
+    // Calculate absolute position on the viewport
+    const rect = anchorElement.getBoundingClientRect();
+    const startX = rect.left + rect.width / 2;
+    const startY = rect.top;
+
+    // Random horizontal trajectory (-25px to +25px offset)
+    const randomAngleX = (Math.random() - 0.5) * 50;
+    const endY = -40 - Math.random() * 20; // Float up 40px to 60px
+
+    textEl.style.setProperty('--target-x', `${randomAngleX}px`);
+    textEl.style.setProperty('--target-y', `${endY}px`);
+    textEl.style.left = `${startX}px`;
+    textEl.style.top = `${startY}px`;
+
+    document.body.appendChild(textEl);
+
+    // Remove element when animation completes
+    textEl.addEventListener('animationend', () => {
+        textEl.remove();
     });
+}
+
+function copySupportCode(buttonEl) {
+    const code = buttonEl.textContent.trim();
+
+    // Trigger visual feedback immediately on user click
+    showFloatingCopyText(buttonEl);
+
+    // Attempt clipboard write
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).catch(() => {
+            fallbackCopy(code);
+        });
+    } else {
+        fallbackCopy(code);
+    }
 }
 
 function renderCodes() {
@@ -140,10 +174,4 @@ function initToolbar() {
 document.addEventListener('DOMContentLoaded', () => {
     initToolbar();
     renderCodes();
-
-    // click to copy creator code stuff
-    const supportBtn = document.getElementById('supportCodeBtn');
-    if (supportBtn) {
-        supportBtn.addEventListener('click', () => copyToClipboard('BATTER', supportBtn));
-    }
 });
