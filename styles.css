@@ -1139,3 +1139,35 @@ body.low-fidelity .card.theme-Cheat::before {
         transform: translateY(50px);
     }
 }
+
+/* Purple Outline for Sprite Cards with Available Hacks */
+.card.hack-available {
+    outline: 2px solid #a855f7 !important;
+    outline-offset: -2px;
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+}
+
+/* Notification badge floating above the card */
+.hack-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #a855f7;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* Purple outline on the Lobby Hacks button */
+.btn-hack-active {
+    outline: 2px solid #a855f7 !important;
+    box-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
+}
