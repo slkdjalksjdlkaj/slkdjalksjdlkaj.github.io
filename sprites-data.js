@@ -45,6 +45,8 @@ const baseSprites = [
     { id: "duck_candy", name: "Gummy Duck", theme: "Candy", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "duck_galaxy", name: "Galaxy Duck", theme: "Galaxy", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "duck_gem", name: "Gem Duck", theme: "Gem", rarity: "Special", unreleased: false, season: "Runners" },
+	{ id: "duck_rift", name: "Cube Duck", theme: "Cube", rarity: "Special", unreleased: true, season: "Override" },
+
 	
     { id: "ghost_basic", name: "Ghost", theme: "Basic", rarity: "Epic", unreleased: false, season: "Runners" },
     { id: "ghost_gold", name: "Gold Ghost", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
@@ -58,12 +60,16 @@ const baseSprites = [
     { id: "demon_candy", name: "Gummy Demon", theme: "Candy", rarity: "Special", unreleased: false, season: "Runners" },
 	{ id: "demon_galaxy", name: "Galaxy Demon", theme: "Galaxy", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "demon_gem", name: "Gem Demon", theme: "Gem", rarity: "Special", unreleased: false, season: "Runners" },
+	{ id: "demon_rift", name: "Cube Demon", theme: "Cube", rarity: "Special", unreleased: true, season: "Override" },
+	{ id: "demon_holofoil", name: "Holofoil Demon", theme: "Holofoil", rarity: "Special", unreleased: true, season: "Override" },
 	
 	{ id: "king_basic", name: "King", theme: "Basic", rarity: "Epic", unreleased: false, season: "Runners" },
     { id: "king_gold", name: "Gold King", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "king_candy", name: "Gummy King", theme: "Candy", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "king_galaxy", name: "Galaxy King", theme: "Galaxy", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "king_holofoil", name: "Holofoil King", theme: "Holofoil", rarity: "Special", unreleased: false, season: "Runners" },
+	{ id: "king_rift", name: "Cube King", theme: "Cube", rarity: "Special", unreleased: true, season: "Override" },
+	{ id: "king_gem", name: "Cube King", theme: "Gem", rarity: "Special", unreleased: true, season: "Override" },
 	
     { id: "striker_basic", name: "Striker", theme: "Basic", rarity: "Epic", unreleased: false, season: "Runners" },
     { id: "striker_gold", name: "Gold Striker", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
@@ -90,9 +96,10 @@ const baseSprites = [
     { id: "punk_gold", name: "Gold Punk", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "punk_candy", name: "Gummy Punk", theme: "Candy", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "punk_galaxy", name: "Galaxy Punk", theme: "Galaxy", rarity: "Special", unreleased: false, season: "Runners" },
-    { id: "punk_gem", name: "Gem Punk", theme: "Gem", rarity: "Special", unreleased: true, season: "Unknown" },
+    { id: "punk_gem", name: "Gem Punk", theme: "Gem", rarity: "Special", unreleased: true, season: "Override" },
     { id: "punk_rift", name: "Cube Punk", theme: "Cube", rarity: "Special", unreleased: false, season: "Runners" },
-
+	{ id: "punk_holofoil", name: "Holofoil Punk", theme: "Holofoil", rarity: "Special", unreleased: true, season: "Override" },
+	
 	{ id: "boss_basic", name: "Boss", theme: "Basic", rarity: "Legendary", unreleased: false, season: "Runners" },
     { id: "boss_gold", name: "Gold Boss", theme: "Gold", rarity: "Special", unreleased: false, season: "Runners" },
     { id: "boss_candy", name: "Gummy Boss", theme: "Candy", rarity: "Special", unreleased: false, season: "Runners" },
