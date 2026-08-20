@@ -905,48 +905,49 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     padding: 12px 16px;
 }
 
-/* Sub-category grouping wrapper with subtle half-selection glowing borders */
+/* Sub-category grouping wrapper with purple border */
 .code-category-group {
     margin-bottom: 24px;
     background: rgba(18, 22, 31, 0.6);
-    border: 1px solid rgba(0, 240, 255, 0.25);
-    border-top: 2px solid rgba(0, 240, 255, 0.7);
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    border-top: 2px solid rgba(168, 85, 247, 0.7);
     border-radius: 8px;
     padding: 12px 16px 16px 16px;
-    box-shadow: 0 0 12px rgba(0, 240, 255, 0.08);
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.1);
 }
 
+/* Table Header Notice */
 .codes-table-header {
     background: rgba(255, 255, 255, 0.03);
     border-bottom: 1px solid var(--border);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--text-soft);
+    padding: 12px 16px;
+    text-align: center;
 }
 
-/* Clear header text alignments to match row content */
 .codes-table-header span {
-    text-align: left;
+    display: none; /* Hides CODE, REWARD, ACTIONS */
 }
 
-.codes-table-header span:nth-child(2) {
-    text-align: left; /* Aligns header directly above left-shifted reward text */
+.codes-table-header::after {
+    content: "Click a code to copy it to your clipboard!";
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--text-soft);
+    text-transform: none;
 }
 
-.codes-table-header span:last-child {
-    text-align: right;
-}
-
-/* 2. Sub-category headers: Centered, larger, and bold */
+/* sub-category headers
 .code-category-header {
     font-family: "Oswald", sans-serif;
-    font-size: 1.5rem; /* Increased size */
-    font-weight: 700; /* Bold */
+    font-size: 1.15rem; /* Lowered size */
+    font-weight: 400; /* Un-bolded */
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #00f0ff;
-    text-align: center; /* Centered */
+    color: #a855f7; /* Swapped cyan for Lobby Hacks purple */
+    text-align: center;
     margin-bottom: 16px;
     padding-bottom: 8px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -960,10 +961,10 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     gap: 8px;
 }
 
-/* Indented code row highlight */
+/* Indented code row left border: updated cyan tint to purple */
 .code-category-items .code-row {
     background: rgba(255, 255, 255, 0.03);
-    border-left: 3px solid rgba(0, 240, 255, 0.4);
+    border-left: 3px solid rgba(168, 85, 247, 0.5);
     border-radius: 4px;
 }
 
@@ -996,12 +997,13 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     color: var(--accent);
 }
 
-/* 3. Reward column formatting: Shifted left and larger text */
+/* reward column formatting */
 .code-reward {
-    font-size: 1.1rem; /* Bigger reward text */
-    font-weight: 500;
-    color: var(--text);
-    text-align: left; /* Shifted alignment left */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.92rem;
+    font-weight: 400;
+    color: var(--text-soft);
+    text-align: left;
 }
 
 /* Align action buttons to the right side of their grid cell */
