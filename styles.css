@@ -900,10 +900,21 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
 .codes-table-header,
 .code-row {
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1.2fr 0.8fr auto;
+    grid-template-columns: 1fr 1.5fr auto;
     align-items: center;
-    padding: 10px 16px;
-    gap: 12px;
+    gap: 16px;
+    padding: 12px 16px;
+}
+
+/* Sub-category grouping wrapper with subtle half-selection glowing borders */
+.code-category-group {
+    margin-bottom: 24px;
+    background: rgba(18, 22, 31, 0.6);
+    border: 1px solid rgba(0, 240, 255, 0.25);
+    border-top: 2px solid rgba(0, 240, 255, 0.7);
+    border-radius: 8px;
+    padding: 12px 16px 16px 16px;
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.08);
 }
 
 .codes-table-header {
@@ -920,6 +931,21 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
 .codes-table-header span:nth-child(3),
 .codes-table-header span:nth-child(4) {
     text-align: center;
+}
+
+/* Indented sub-collection items container */
+.code-category-items {
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Indented code row highlight */
+.code-category-items .code-row {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid rgba(0, 240, 255, 0.4);
+    border-radius: 4px;
 }
 
 .codes-list {
