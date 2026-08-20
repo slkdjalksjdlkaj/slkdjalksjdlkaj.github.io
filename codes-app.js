@@ -140,6 +140,46 @@ function renderCodes() {
     });
 }
 
+// Generic Clipboard Copy Helper with floating text
+function copyToClipboard(text, anchorElement) {
+    showFloatingCopyText(anchorElement);
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).catch(() => {
+            fallbackCopy(text);
+        });
+    } else {
+        fallbackCopy(text);
+    }
+}
+
+function fallbackCopy(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.top = '0';
+    textArea.style.left = '0';
+    textArea.style.width = '2em';
+    textArea.style.height = '2em';
+    textArea.style.padding = '0';
+    textArea.style.border = 'none';
+    textArea.style.outline = 'none';
+    textArea.style.boxShadow = 'none';
+    textArea.style.background = 'transparent';
+    
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    try {
+        document.execCommand('copy');
+    } catch (err) {
+        console.error('Fallback copy failed:', err);
+    }
+
+    document.body.removeChild(textArea);
+}
+
 function initToolbar() {
     const redeemAllBtn = document.getElementById('redeemAllBtn');
     const unredeemAllBtn = document.getElementById('unredeemAllBtn');
@@ -174,4 +214,12 @@ function initToolbar() {
 document.addEventListener('DOMContentLoaded', () => {
     initToolbar();
     renderCodes();
+
+    const supportBtn = document.getElementById('supportCodeBtn');
+    if (supportBtn) {
+        supportBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            copySupportCode(supportBtn);
+        });
+    }
 });
