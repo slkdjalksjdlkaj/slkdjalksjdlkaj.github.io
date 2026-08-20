@@ -110,16 +110,23 @@ function renderCodes() {
         grouped[catKey].push(item);
     });
 
-    // Render categories in order
+// Render categories in order
     CATEGORY_ORDER.forEach(catKey => {
         if (!grouped[catKey] || grouped[catKey].length === 0) return;
 
         const categoryTitle = codeCategories[catKey] || "Miscellaneous";
 
+        // Category wrapper box with glowing accent border
+        const sectionGroup = document.createElement('div');
+        sectionGroup.className = 'code-category-group';
+
         const sectionHeader = document.createElement('div');
         sectionHeader.className = 'code-category-header';
         sectionHeader.textContent = categoryTitle;
-        list.appendChild(sectionHeader);
+        sectionGroup.appendChild(sectionHeader);
+
+        const itemsContainer = document.createElement('div');
+        itemsContainer.className = 'code-category-items';
 
         grouped[catKey].forEach(item => {
             const isRedeemed = redeemed.includes(item.code);
@@ -146,8 +153,11 @@ function renderCodes() {
             const redeemBtn = row.querySelector('.btn-redeem');
             redeemBtn.addEventListener('click', () => toggleRedeem(item.code));
 
-            list.appendChild(row);
+            itemsContainer.appendChild(row);
         });
+
+        sectionGroup.appendChild(itemsContainer);
+        list.appendChild(sectionGroup);
     });
 }
 
