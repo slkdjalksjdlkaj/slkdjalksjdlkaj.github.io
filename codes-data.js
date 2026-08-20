@@ -17,6 +17,7 @@ const baseCodes = [
     { code: "8BitBlast", reward: "Cheat Master 8-Bit Sprite", internalreward: "8bit_cheat", category: "cat1", active: true },
     { code: "GottaGoFast", reward: "Cheat Master Sonic Sprite", internalreward: "sonic_cheat", category: "cat1", active: true },
     { code: "IWannaFlyHigh", reward: "Cheat Master Tails Sprite", internalreward: "tails_cheat", category: "cat1", active: true },
+    { code: "Play4All", reward: "Cheat Master Jonesy Sprite", internalreward: "jonesy_cheat", category: "cat1", active: true },
 
     // --- cat2
     { code: "BeMoreAlien", reward: "Override Ready Loading Screen", internalreward: null, category: "cat2", active: true },
