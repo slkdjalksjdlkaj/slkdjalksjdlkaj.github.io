@@ -895,12 +895,11 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     overflow: hidden;
 }
 
-/* Matching 5-column layout for Header and Rows:
-   1: Code | 2: Reward (Centered) | 3: Source (Centered) | 4: Date (Centered) | 5: Action Buttons */
+/* 1. Explicit 3-column grid layout for Header and Rows to ensure perfect alignment */
 .codes-table-header,
 .code-row {
     display: grid;
-    grid-template-columns: 1fr 1.5fr auto;
+    grid-template-columns: 1fr 1.2fr auto; /* Adjusted middle column width to shift Reward left */
     align-items: center;
     gap: 16px;
     padding: 12px 16px;
@@ -924,6 +923,33 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     font-weight: 700;
     letter-spacing: 1px;
     color: var(--text-soft);
+}
+
+/* Clear header text alignments to match row content */
+.codes-table-header span {
+    text-align: left;
+}
+
+.codes-table-header span:nth-child(2) {
+    text-align: left; /* Aligns header directly above left-shifted reward text */
+}
+
+.codes-table-header span:last-child {
+    text-align: right;
+}
+
+/* 2. Sub-category headers: Centered, larger, and bold */
+.code-category-header {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem; /* Increased size */
+    font-weight: 700; /* Bold */
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #00f0ff;
+    text-align: center; /* Centered */
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Header Text Center Alignment */
@@ -977,10 +1003,20 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     color: var(--accent);
 }
 
+/* 3. Reward column formatting: Shifted left and larger text */
 .code-reward {
-    font-size: 15px;
+    font-size: 1.1rem; /* Bigger reward text */
+    font-weight: 500;
     color: var(--text);
-    text-align: center;
+    text-align: left; /* Shifted alignment left */
+}
+
+/* Align action buttons to the right side of their grid cell */
+.code-card-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 /* Source Cell & Link Formatting */
@@ -1008,11 +1044,6 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     white-space: nowrap;
 }
 
-.code-card-actions {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-}
 
 .codes-empty {
     padding: 24px;
