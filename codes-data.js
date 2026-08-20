@@ -39,6 +39,6 @@ const baseCodes = [
     { code: "LetsBlockAndRoll", reward: "Turns you into a Tetrimino.", internalreward: null, category: "cat4", active: true },
     
     // --- cat5
-    { code: "Looper1", reward: "Unknown", internalreward: null, category: "cat5", active: true },
-    { code: "fishstick1", reward: "Unknown", internalreward: null, category: "cat5", active: true }
+    { code: "Looper1", reward: "Unknown", internalreward: null, category: "cat5", active: false },
+    { code: "fishstick1", reward: "Unknown", internalreward: null, category: "cat5", active: false }
 ];
