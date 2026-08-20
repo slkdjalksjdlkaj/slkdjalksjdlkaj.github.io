@@ -930,12 +930,12 @@ function drawMiniCard(ctx, sprite, x, y, w, h, cardState, imageMap) {
     ctx.fillRect(x, y + innerH, w, 22);
 
     ctx.fillStyle = isMissing ? '#ef4444' : '#ffffff';
-    let fontSize = 9.5;
+    let fontSize = 19;
     const name = sprite.name.toUpperCase();
     ctx.font = `bold ${fontSize}px "Oswald", sans-serif`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    while (ctx.measureText(name).width > w - 6 && fontSize > 6.5) {
+    while (ctx.measureText(name).width > w - 6 && fontSize > 13) {
         fontSize -= 0.5;
         ctx.font = `bold ${fontSize}px "Oswald", sans-serif`;
     }
