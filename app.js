@@ -571,6 +571,7 @@ function renderGrid() {
         if (hasHack) {
             cardHTML = `<div class="hack-badge">Hack Available</div>` + cardHTML;
         }
+       
 
         card.innerHTML = cardHTML;
         frag.appendChild(card);
