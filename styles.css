@@ -1140,28 +1140,34 @@ body.low-fidelity .card.theme-Cheat::before {
     }
 }
 
-/* Card with Available Hack - High Z-Index & Full Opacity */
 .card.hack-available {
     outline: 2px solid #a855f7 !important;
     outline-offset: -2px;
     box-shadow: 0 0 12px rgba(168, 85, 247, 0.7) !important;
-    /* Prevent opacity dimming applied to unobtained/uncollected cards */
-    opacity: 1 !important; 
-    filter: none !important;
+    opacity: 1 !important; /* Keep container un-faded so the badge stays crisp */
 }
 
-/* Ensure card acts as positioning context */
+/*
 .card {
     position: relative;
+}*/
+
+/* Dim only the inner card contents (image, background, text) when uncollected */
+.card:not(.obtained) .card-content,
+.card:not(.obtained) .sprite-img,
+.card:not(.obtained) .sprite-name,
+.card:not(.obtained) .sprite-details {
+    opacity: 0.4;
+    filter: grayscale(80%);
 }
 
-/* Hack Badge Centered Over the Sprite Image & Text */
+/* Badge centered over the middle with 100% full opacity and pop */
 .hack-badge {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(168, 85, 247, 0.95);
+    background: #a855f7;
     color: #ffffff;
     font-size: 11px;
     font-weight: 800;
@@ -1170,11 +1176,12 @@ body.low-fidelity .card.theme-Cheat::before {
     padding: 6px 12px;
     border-radius: 6px;
     border: 1px solid #ffffff;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6), 0 0 8px rgba(168, 85, 247, 0.8);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.7), 0 0 10px rgba(168, 85, 247, 0.9);
     z-index: 20;
     white-space: nowrap;
     pointer-events: none;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    opacity: 1 !important;
+    filter: none !important;
 }
 
 /* Purple outline on the Lobby Hacks button */
