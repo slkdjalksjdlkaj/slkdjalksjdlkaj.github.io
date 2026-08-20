@@ -1296,7 +1296,7 @@ if (useCompactHeader) {
         ctx.fillText('staticvacant.github.io/fnsprites/', canvasW / 2, canvasH - layout.border - layout.footerH / 2);
 
         // Export mode
-        const shouldOpenInNewTab = isIOS() || state.settings.openExports;
+        const shouldOpenInNewTab = !isIOS() || state.settings.openExports;
         
         if (shouldOpenInNewTab) {
             canvas.toBlob((blob) => {
@@ -1313,7 +1313,7 @@ if (useCompactHeader) {
             link.download = `${config.filename}.png`;
             link.href = canvas.toDataURL('image/png');
             link.click();
-            toast('Image exported successfully!', 'success');
+            toast('Image downloaded successfully!', 'success');
         }
     });
 }
