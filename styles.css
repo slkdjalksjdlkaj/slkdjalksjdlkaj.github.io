@@ -2,10 +2,6 @@
     display: none !important;
 }
 
-/* ===================================================
-   Design Tokens
-   =================================================== */
-
 :root {
     --bg: #0b0d14;
     --surface: #141720;
@@ -939,11 +935,11 @@ body.low-fidelity .rarity-Special .card-rarity { background: #51f7cc; }
     text-transform: none;
 }
 
-/* sub-category headers
+/* sub-category headers */
 .code-category-header {
     font-family: "Oswald", sans-serif;
-    font-size: 1.15rem; /* Lowered size */
-    font-weight: 400; /* Un-bolded */
+    font-size: 1.15rem; 
+    font-weight: 400; 
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: #a855f7; /* Swapped cyan for Lobby Hacks purple */
