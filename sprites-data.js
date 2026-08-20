@@ -167,6 +167,30 @@ const baseSprites = [
 	{ id: "bullet_basic", name: "Bullet", theme: "Basic", rarity: "Mythic", unreleased: true, season: "Override" },
 
 
+    { id: "bush_basic", name: "Bush", theme: "Basic", rarity: "Rare", unreleased: false, season: "Override" },
+    { id: "bush_gold", name: "Gold Bush", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
+    { id: "bush_cheat", name: "Cheat Master Bush", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
+
+    { id: "jonesy_basic", name: "Jonesy", theme: "Basic", rarity: "Rare", unreleased: false, season: "Override" },
+    { id: "jonesy_gold", name: "Gold Jonesy", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
+    { id: "jonesy_cheat", name: "Cheat Master Jonesy", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
+
+    { id: "adventure_basic", name: "Adventure", theme: "Basic", rarity: "Rare", unreleased: false, season: "Override" },
+    { id: "adventure_gold", name: "Gold Adventure", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
+    { id: "adventure_cheat", name: "Cheat Master Adventure", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
+
+	{ id: "8bit_basic", name: "8-Bit", theme: "Basic", rarity: "Rare", unreleased: false, season: "Override" },
+    { id: "8bit_gold", name: "Gold 8-Bit", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
+    { id: "8bit_cheat", name: "Cheat Master 8-Bit", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
+	
+    { id: "stormking_basic", name: "Storm Scout", theme: "Basic", rarity: "Rare", unreleased: false, season: "Override" },
+    { id: "stormking_gold", name: "Gold Storm Scout", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
+    { id: "stormking_cheat", name: "Cheat Master Storm Scout", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
+
+    { id: "killswitch_basic", name: "Killswitch", theme: "Basic", rarity: "Epic", unreleased: false, season: "Override" },
+    { id: "killswitch_gold", name: "Gold Killswitch", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
+    { id: "killswitch_cheat", name: "Cheat Master Killswitch", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
+
 	{ id: "sonic_basic", name: "Sonic", theme: "Basic", rarity: "Epic", unreleased: false, season: "Override" },
     { id: "sonic_gold", name: "Gold Sonic", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
     { id: "sonic_cheat", name: "Cheat Master Sonic", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
@@ -178,50 +202,22 @@ const baseSprites = [
     { id: "shadow_basic", name: "Shadow", theme: "Basic", rarity: "Epic", unreleased: false, season: "Override" },
     { id: "shadow_gold", name: "Gold Shadow", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
     { id: "shadow_cheat", name: "Cheat Master Shadow", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
-	
-
-    { id: "bush_basic", name: "Bush", theme: "Basic", rarity: "Rare", unreleased: false, season: "Override" },
-    { id: "bush_gold", name: "Gold Bush", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
-    { id: "bush_cheat", name: "Cheat Master Bush", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
-	
-
-    { id: "jonesy_basic", name: "Jonesy", theme: "Basic", rarity: "Rare", unreleased: false, season: "Override" },
-    { id: "jonesy_gold", name: "Gold Jonesy", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
-    { id: "jonesy_cheat", name: "Cheat Master Jonesy", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
-	
-
-    { id: "adventure_basic", name: "Adventure", theme: "Basic", rarity: "Rare", unreleased: false, season: "Override" },
-    { id: "adventure_gold", name: "Gold Adventure", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
-    { id: "adventure_cheat", name: "Cheat Master Adventure", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
-	
-
-    { id: "klombo_basic", name: "Klombo", theme: "Basic", rarity: "Mythic", unreleased: false, season: "Override" },
-    { id: "klombo_gold", name: "Gold Klombo", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
-    { id: "klombo_cheat", name: "Cheat Master Klombo", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
-	
 
     { id: "jackrabbit_basic", name: "Jackrabbit", theme: "Basic", rarity: "Legendary", unreleased: false, season: "Override" },
     { id: "jackrabbit_gold", name: "Gold Jackrabbit", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
     { id: "jackrabbit_cheat", name: "Cheat Master Jackrabbit", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
 	
-
-    { id: "8bit_basic", name: "8-Bit", theme: "Basic", rarity: "Rare", unreleased: false, season: "Override" },
-    { id: "8bit_gold", name: "Gold 8-Bit", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
-    { id: "8bit_cheat", name: "Cheat Master 8-Bit", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
-	
+    { id: "klombo_basic", name: "Klombo", theme: "Basic", rarity: "Mythic", unreleased: false, season: "Override" },
+    { id: "klombo_gold", name: "Gold Klombo", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
+    { id: "klombo_cheat", name: "Cheat Master Klombo", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
 
     { id: "crown_basic", name: "Crown", theme: "Basic", rarity: "Mythic", unreleased: false, season: "Override" },
     { id: "crown_gold", name: "Gold Crown", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
     { id: "crown_cheat", name: "Cheat Master Crown", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
 	
 
-    { id: "killswitch_basic", name: "Killswitch", theme: "Basic", rarity: "Epic", unreleased: false, season: "Override" },
-    { id: "killswitch_gold", name: "Gold Killswitch", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
-    { id: "killswitch_cheat", name: "Cheat Master Killswitch", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
-	
 
-    { id: "stormking_basic", name: "Storm Scout", theme: "Basic", rarity: "Rare", unreleased: false, season: "Override" },
-    { id: "stormking_gold", name: "Gold Storm Scout", theme: "Gold", rarity: "Special", unreleased: false, season: "Override" },
-    { id: "stormking_cheat", name: "Cheat Master Storm Scout", theme: "Cheat", rarity: "Special", unreleased: false, season: "Override" },
+
+
 	
 ];
