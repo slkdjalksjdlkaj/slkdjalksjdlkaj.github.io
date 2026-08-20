@@ -102,7 +102,7 @@ function renderCodes() {
         return;
     }
 
-    // Group items by category key (e.g. "cat1")
+    // Group items by category key (e.g., "cat1")
     const grouped = {};
     filteredCodes.forEach(item => {
         const catKey = item.category || 'cat4';
@@ -110,11 +110,10 @@ function renderCodes() {
         grouped[catKey].push(item);
     });
 
-    // Render categories in order using codeCategories map for the header title
+    // Render categories in order
     CATEGORY_ORDER.forEach(catKey => {
         if (!grouped[catKey] || grouped[catKey].length === 0) return;
 
-        // Header lookup: gets full string title from codeCategories map
         const categoryTitle = codeCategories[catKey] || "Miscellaneous";
 
         const sectionHeader = document.createElement('div');
@@ -127,14 +126,9 @@ function renderCodes() {
             const row = document.createElement('div');
             row.className = `code-row ${isRedeemed ? 'redeemed' : ''}`;
 
-            const sourceHtml = item.link && item.link.trim() !== ''
-                ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer" class="code-source-link">${item.source || ''}</a>`
-                : `<span class="code-source">${item.source || ''}</span>`;
-
             row.innerHTML = `
                 <span class="code-value" title="Click to copy">${item.code}</span>
                 <span class="code-reward">${item.reward}</span>
-                <div class="code-source-cell">${sourceHtml}</div>
                 <div class="code-card-actions">
                     <button type="button" class="btn btn-copy">Copy Code</button>
                     <button type="button" class="btn btn-redeem ${isRedeemed ? '' : 'btn-accent'}">
