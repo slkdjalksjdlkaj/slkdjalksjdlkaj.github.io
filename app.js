@@ -27,20 +27,20 @@ const TRACKER_URL = 'https://staticvacant.github.io/fnsprites/';
 const CROWN_ICON = '<svg class="crown-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 19h20v2H2v-2zM2 5l5 3.5L12 2l5 6.5L22 5v12H2V5z"/></svg>';
 
 const EXPORT_LAYOUT = {
-    border: 8,
-    sidePad: 20,
-    minCanvasW: 360,
+    border: 4,
+    sidePad: 8,
+    minCanvasW: 240,
     compactHeaderW: 760,
-    headerH: 80,
-    compactHeaderH: 132,
-    colHeaderH: 35,
-    cardW: 80,
-    cardH: 100,
-    rowGap: 12,
-    cardGap: 8,
-    labelW: 120,
-    colGap: 60,
-    footerH: 60,
+    headerH: 50,
+    compactHeaderH: 80,
+    colHeaderH: 25,
+    cardW: 110,
+    cardH: 138,
+    rowGap: 6,
+    cardGap: 6,
+    labelW: 90,
+    colGap: 16,
+    footerH: 32,
     maxSingleColumnRows: 6,
 };
 
@@ -1146,7 +1146,7 @@ function exportImage(mode) {
             ctx.fillRect(x, y + 16, bw * pct, 10);
         };
 
-        if (useCompactHeader) {
+if (useCompactHeader) {
             const topY = layout.border + 24;
             const mascotSize = 24;
             const mascotGap = mascotImg ? 8 : 0;
@@ -1168,11 +1168,13 @@ function exportImage(mode) {
             ctx.textAlign = 'center';
             ctx.fillText(config.titleL2, canvasW / 2, layout.border + 52);
 
-            const statsW = bw * 2 + statGap;
-            const statsX = (canvasW - statsW) / 2;
-            const statsY = layout.border + 86;
-            drawProgressBlock('COLLECTION', ownedCount, totalCount, colPct, statsX, statsY, '#22c55e');
-            drawProgressBlock('MASTERY', masteredCount, totalCount, masPct, statsX + bw + statGap, statsY, '#ffd700');
+            if (mode === 'trade') {
+                const statsW = bw * 2 + statGap;
+                const statsX = (canvasW - statsW) / 2;
+                const statsY = layout.border + 86;
+                drawProgressBlock('COLLECTION', ownedCount, totalCount, colPct, statsX, statsY, '#22c55e');
+                drawProgressBlock('MASTERY', masteredCount, totalCount, masPct, statsX + bw + statGap, statsY, '#ffd700');
+            }
         } else {
             const statsRight = canvasW - layout.border - layout.sidePad;
             const collectionX = statsRight - bw * 2 - statGap;
@@ -1180,7 +1182,7 @@ function exportImage(mode) {
             const titleX = layout.border + layout.sidePad;
             const mascotSize = 32;
             const mascotGap = mascotImg ? 10 : 0;
-            const titleMaxW = collectionX - titleX - 20;
+            const titleMaxW = (mode === 'trade') ? (collectionX - titleX - 20) : (canvasW - titleX - layout.border - layout.sidePad);
 
             fitFont(fullTitle, titleMaxW - (mascotImg ? mascotSize + mascotGap : 0), 26, 16, 'italic 900');
             ctx.fillStyle = borderGrad;
@@ -1194,8 +1196,10 @@ function exportImage(mode) {
             }
             ctx.fillText(fullTitle, textLeft, layout.border + headerH / 2);
 
-            drawProgressBlock('COLLECTION', ownedCount, totalCount, colPct, collectionX, layout.border + 28, '#22c55e');
-            drawProgressBlock('MASTERY', masteredCount, totalCount, masPct, masteryX, layout.border + 28, '#ffd700');
+            if (mode === 'trade') {
+                drawProgressBlock('COLLECTION', ownedCount, totalCount, colPct, collectionX, layout.border + 28, '#22c55e');
+                drawProgressBlock('MASTERY', masteredCount, totalCount, masPct, masteryX, layout.border + 28, '#ffd700');
+            }
         }
 
         if (mode === 'trade') {
