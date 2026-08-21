@@ -30,6 +30,7 @@ const baseCodes = [
     { code: "Chispambo", reward: "2,000 Sprite Dust", internalreward: null, category: "cat3", active: true },
     { code: "Abgestaubt", reward: "2,000 Sprite Dust", internalreward: null, category: "cat3", active: true },
     { code: "PerlimPinPin", reward: "2,000 Sprite Dust", internalreward: null, category: "cat3", active: true },
+    { code: "H0p0nVC", reward: "2,000 Sprite Dust", internalreward: null, category: "cat3", active: true },
     { code: "SurviveTheNight", reward: "2 Cheat Code Locators", internalreward: null, category: "cat3", active: true },
     { code: "FindItChat", reward: "2 Cheat Code Locators", internalreward: null, category: "cat3", active: true },
     { code: "TakeYourHeart", reward: "2 Extraction Accelerators", internalreward: null, category: "cat3", active: true },
