@@ -23,7 +23,7 @@ const SORT_METHODS = ['theme', 'sprite', 'name', 'rarity'];
 const UI_THEME_LABELS = { Candy: 'Gummy' };
 const EXPORT_THEME_LABELS = { Basic: 'NORMAL', Candy: 'GUMMY' };
 const TRADE_THEME_LABELS = { Basic: 'Base', Candy: 'Gummy' };
-const TRACKER_URL = 'https://staticvacant.github.io/fnsprites/';
+const TRACKER_URL = 'https://rickventure.com/';
 const CROWN_ICON = '<svg class="crown-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 19h20v2H2v-2zM2 5l5 3.5L12 2l5 6.5L22 5v12H2V5z"/></svg>';
 
 const EXPORT_LAYOUT = {
@@ -1293,7 +1293,7 @@ if (useCompactHeader) {
         ctx.font = 'bold 16px "Oswald", sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText('staticvacant.github.io/fnsprites/', canvasW / 2, canvasH - layout.border - layout.footerH / 2);
+        ctx.fillText('rickventure.com', canvasW / 2, canvasH - layout.border - layout.footerH / 2);
 
         // Export mode
         const shouldOpenInNewTab = isIOS() || state.settings.openExports;
