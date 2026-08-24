@@ -3,7 +3,7 @@
     const OBTAINED_KEY = 'fn_obtained_sprites';
     const MASTERED_KEY = 'fn_mastered_sprites';
     const DISMISSED_KEY = 'fn_migration_dismissed';
-    const RENAG_DAYS = 7;
+    const RENAG_DAYS = 1;
 
     function getStoredArray(key) {
         try {
