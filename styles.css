@@ -1293,3 +1293,56 @@ body.low-fidelity .card.theme-Cheat::before {
         min-height: 40px;
     }
 }
+
+/* migration */
+
+.migration-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 7, 12, 0.78);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--gap-lg);
+    z-index: 2000;
+}
+
+.migration-modal {
+    max-width: 440px;
+    width: 100%;
+    background: var(--surface-raised);
+    border: 1px solid var(--border-hover);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.migration-modal h2 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.migration-modal p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-soft);
+    margin-bottom: 20px;
+}
+
+.migration-modal p strong {
+    color: var(--collected);
+}
+
+.migration-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.migration-actions .btn {
+    width: 100%;
+}
